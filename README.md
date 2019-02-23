@@ -14,7 +14,7 @@ Hit `prefix + I` to fetch the plugin and source it.
 
 ## Usage
 
-Add `#{volume_percentage}` string to the existing `status-right` or `status-left` tmux option.
+Add `#{tvolume}` string to the existing `status-right` or `status-left` tmux option.
 Example:
 ```sh
     # in .tmux.conf
