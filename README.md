@@ -21,5 +21,9 @@ Example:
     set -g status-right 'ᐘ·#{volume_percentage}'
 ```
 
+## Options
+- `@volume_muted_icon`: text printed when muted
+- `@volume_missing_icon`: text printed when volume is not available (output device does not provide volume info. ex: TVs connected via HDMI)
+
 ## License
 [MIT](LICENSE)
