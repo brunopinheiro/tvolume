@@ -1,10 +1,20 @@
 #!/usr/bin/env bash
 
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-source "$CURRENT_DIR/scripts/helpers.sh"
+source "$CURRENT_DIR/helpers.sh"
 
-is_osx() {
-  [ $(uname) == "Darwin" ]
+option_muted_text=""
+option_missing_text=""
+
+option_muted_text_default="⊘"
+option_missing_text_default="⊗"
+
+get_option_muted_text() {
+  option_muted_text=$(get_tmux_option "@volume_muted_icon" "$option_muted_text_default")
+}
+
+get_option_missing_text() {
+  option_missing_text=$(get_tmux_option "@volume_missing_icon" "$option_missing_text_default")
 }
 
 is_muted() {
@@ -14,18 +24,20 @@ is_muted() {
 get_volume_output() {
   local volume="$(osascript -e "output volume of (get volume settings)")"
   if [ "$volume" == "missing value" ]; then
-    echo "-"
+    echo "$option_missing_text"
   else
-    echo "$volume"
+    echo "$volume%"
   fi
 }
 
 get_volume_percentage() {
   if is_osx; then
     if is_muted; then
-      echo "muted"
+      get_option_muted_text
+      echo "$option_muted_text"
     else
-      echo "$(get_volume_output)%"
+      get_option_missing_text
+      echo "$(get_volume_output)"
     fi
   else
     echo "Not Available"

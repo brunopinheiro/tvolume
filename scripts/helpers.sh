@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+is_osx() {
+  [ $(uname) == "Darwin" ]
+}
+
 get_tmux_option() {
   local option="$1"
   local default_value="$2"
