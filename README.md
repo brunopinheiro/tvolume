@@ -18,3 +18,6 @@ Example:
     # in .tmux.conf
     set -g status-right 'ᐘ·#{volume_percentage}'
 ```
+
+## License
+[MIT](LICENSE)
