@@ -1,8 +1,10 @@
 # Tmux Volume
-> Enables displaying the volume percentage in Tmux `status-right` and `status-left`
+> Currently, available only for macOS
+
+Enables displaying the volume percentage in Tmux `status-right` and `status-left`
 
 ## Installation
-> [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
+[Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
 
 Add plugin to the list of TPM plugins in `.tmux.conf`:
 
