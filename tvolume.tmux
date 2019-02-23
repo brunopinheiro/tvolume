@@ -11,8 +11,8 @@ set_tmux_option() {
 
 do_interpolation() {
   local input="$1"
-  local original="\#{volume_percentage}"
-  local replacement="#($CURRENT_DIR/scripts/volume_percentage.sh)"
+  local original="\#{tvolume}"
+  local replacement="#($CURRENT_DIR/scripts/volume.sh)"
   local interpolation="${input/${original}/${replacement}}"
   echo "$interpolation"
 }
