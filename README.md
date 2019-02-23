@@ -18,7 +18,7 @@ Add `#{volume_percentage}` string to the existing `status-right` or `status-left
 Example:
 ```sh
     # in .tmux.conf
-    set -g status-right 'ᐘ·#{volume_percentage}'
+    set -g status-right 'ᐘ·#{tvolume}'
 ```
 
 ## Options
